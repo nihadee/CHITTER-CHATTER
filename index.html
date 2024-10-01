@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHITTER-CHATTER</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <img src="logo.png" alt="" class="logo">
+
+  <h1 class="welcome">WELCOME</h1>
+  <h6 class="to">TO</h6>
+  <h2 class="chitter-chatter">CHITTER-CHATTER</h2>
+
+  <form id="signupForm">
+    <!-- Changed type from text to email for email validation -->
+    <div class="email"><input type="email" placeholder="enter email" name="email" id="emailInput" required></div>
+
+    <div class="password"><input type="password" placeholder="enter password" name="password" required></div>
+
+    <button type="submit" style="width:auto;">Sign Up</button>
+  </form>
+
+  <script>
+    document.getElementById("signupForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Get the email value
+      const emailInput = document.getElementById("emailInput").value;
+
+      // Check if the email input field is valid
+      if (emailInput.includes("@") && emailInput.includes(".")) {
+        // Redirect to chat.html if email is valid
+        window.location.href = "chat.html";
+      } else {
+        // Show an alert if the email is invalid
+        alert("Please enter a valid email address.");
+      }
+    });
+  </script>
+</body>
+</html>
